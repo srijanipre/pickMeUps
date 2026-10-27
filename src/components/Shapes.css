@@ -1,0 +1,20 @@
+.shape {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
+
+.shape--hero {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  z-index: 0;
+}
+
+.shape--bottom {
+  height: 120px;
+}
+
+.shape--wave {
+  height: 170px;
+}

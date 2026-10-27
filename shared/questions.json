@@ -1,0 +1,20 @@
+{
+  "questions": [
+    {
+      "id": "stress-resources",
+      "prompt": "What Campus Resources can help you talk thru stress and anxiety?",
+      "acceptedAnswers": [
+        "counseling center",
+        "counselling center",
+        "uic counseling",
+        "counseling",
+        "counselling",
+        "counselor",
+        "counsellor",
+        "therapy",
+        "therapist",
+        "the counseling center"
+      ]
+    }
+  ]
+}

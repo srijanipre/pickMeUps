@@ -1,0 +1,43 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  background: var(--white);
+}
+
+.home__hero {
+  position: relative;
+  background: var(--white);
+  padding: 34px var(--gutter) 12px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.home__hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.home__mailbox {
+  display: flex;
+  justify-content: center;
+  margin-top: -28px;
+}
+
+.home__mailbox .mailbox {
+  width: 128px;
+}
+
+.home__intro {
+  margin: 14px auto 0;
+  max-width: 30ch;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.home__bottom {
+  margin-top: auto;
+  padding-top: 40px;
+  line-height: 0;
+}

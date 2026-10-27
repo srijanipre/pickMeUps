@@ -1,0 +1,6 @@
+.mailbox {
+  display: block;
+  width: 120px;
+  height: auto;
+  overflow: visible;
+}

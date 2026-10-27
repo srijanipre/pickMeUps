@@ -1,0 +1,22 @@
+.header {
+  background: var(--navy);
+  padding: calc(env(safe-area-inset-top, 0px) + 10px) 10px 10px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--pink-soft);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  line-height: 1;
+}

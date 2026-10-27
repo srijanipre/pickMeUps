@@ -1,0 +1,113 @@
+.question {
+  padding: 0 var(--gutter);
+}
+
+.question__feedback {
+  min-height: 34px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6px;
+}
+
+.question__wrong {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+  text-align: center;
+}
+
+.question__card {
+  border: 1.5px solid var(--pink-soft);
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.question__prompt {
+  display: block;
+  width: 100%;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 5.6vw, 1.5rem);
+  line-height: 1.2;
+  color: var(--pink);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.question__input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--pink-soft);
+  border-radius: 4px;
+  background: var(--white);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px; /* prevents iOS zoom-on-focus */
+  color: var(--ink);
+}
+
+.question__input::placeholder {
+  color: #8a8d9c;
+}
+
+.question__input:focus-visible {
+  outline: 3px solid var(--blue-light);
+  outline-offset: 2px;
+}
+
+.question__input:disabled {
+  background: #f6f6fa;
+}
+
+.question__submit {
+  width: 100%;
+  max-width: 280px;
+  min-height: 46px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(20, 30, 70, 0.3);
+  touch-action: manipulation;
+}
+
+.question__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.question__arrow {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+}
+
+.question__spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: var(--white);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,24 @@
+.arched {
+  width: min(100%, 360px);
+  margin: 0 auto;
+  font-family: var(--font-serif);
+}
+
+.arched__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.arched__text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.arched__spark line {
+  stroke: var(--ink);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
