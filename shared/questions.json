@@ -15,11 +15,11 @@
       "answer": "Monday–Friday"
     },
     {
-      "id": "mc-who",
+      "id": "mc-first-step",
       "type": "multiple-choice",
-      "prompt": "Who can use the Counseling Center's services?",
-      "choices": ["UIC students", "Faculty and staff", "Anyone in Chicago", "Only graduate students"],
-      "answer": "UIC students"
+      "prompt": "What's the first step to start group or individual therapy at the Counseling Center?",
+      "choices": ["An initial consultation", "A doctor's referral", "A written essay", "A professor's signature"],
+      "answer": "An initial consultation"
     },
     {
       "id": "mc-offers",
