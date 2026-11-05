@@ -42,7 +42,7 @@ Never put the real PIN in `src/` or in `.env` files starting with `VITE_` (those
 
 ## Editing content
 
-- Questions and accepted answers: `shared/questions.json` (used by both the browser demo and the server). Matching is case-insensitive and ignores punctuation; an answer counts if it *contains* any accepted phrase (e.g. "the uic counseling center!" matches "counseling center"). Several questions can be listed; one is picked at random on each visit.
+- Questions: `shared/questions.json` (used by both the browser demo and the server). Each is either `"type": "multiple-choice"` with a `choices` list (shuffled on each visit) or `"type": "true-false"`. `answer` must match the correct choice exactly (or `"True"` / `"False"`). One question is picked at random on each visit, and every correct answer reveals the same mailbox code.
 - Titles, intro text, reminder messages (random per success), How-it-works labels, footer link + credits, demo code: `src/config/site.ts`.
 - Footer link: set `footer.linkHref` to the Counseling Center resources page.
 
@@ -60,3 +60,7 @@ src/components/              Header, Footer, ArchedTitle, Mailbox, Shapes,
                              QuestionCard, HowItWorks, HomeScreen, SuccessScreen
 server/index.mjs             reference API that returns the PIN after validation
 ```
+
+---
+
+Co-authored with [Claude](https://claude.com/claude-code).

@@ -1,20 +1,107 @@
 {
   "questions": [
     {
-      "id": "stress-resources",
-      "prompt": "What Campus Resources can help you talk thru stress and anxiety?",
-      "acceptedAnswers": [
-        "counseling center",
-        "counselling center",
-        "uic counseling",
-        "counseling",
-        "counselling",
-        "counselor",
-        "counsellor",
-        "therapy",
-        "therapist",
-        "the counseling center"
-      ]
+      "id": "mc-cost",
+      "type": "multiple-choice",
+      "prompt": "How much do Counseling Center services cost for UIC students?",
+      "choices": ["They're free", "$20 per session", "$50 per session", "Billed to your insurance"],
+      "answer": "They're free"
+    },
+    {
+      "id": "mc-days",
+      "type": "multiple-choice",
+      "prompt": "Which days is the Counseling Center open?",
+      "choices": ["Monday–Friday", "Weekends only", "Tuesday–Thursday", "Every day of the year"],
+      "answer": "Monday–Friday"
+    },
+    {
+      "id": "mc-who",
+      "type": "multiple-choice",
+      "prompt": "Who can use the Counseling Center's services?",
+      "choices": ["UIC students", "Faculty and staff", "Anyone in Chicago", "Only graduate students"],
+      "answer": "UIC students"
+    },
+    {
+      "id": "mc-offers",
+      "type": "multiple-choice",
+      "prompt": "Which of these does the Counseling Center offer?",
+      "choices": ["Group therapy", "Parking permits", "Exam tutoring", "Textbook rentals"],
+      "answer": "Group therapy"
+    },
+    {
+      "id": "mc-988",
+      "type": "multiple-choice",
+      "prompt": "Outside of UIC, what number can you call or text any time, 24/7, in a mental health crisis?",
+      "choices": ["988", "311", "411", "611"],
+      "answer": "988"
+    },
+    {
+      "id": "mc-togetherall",
+      "type": "multiple-choice",
+      "prompt": "Togetherall, one of the Counseling Center's partners, offers…",
+      "choices": ["Free, anonymous 24/7 peer support", "Meal plan discounts", "Course registration help", "Campus shuttle rides"],
+      "answer": "Free, anonymous 24/7 peer support"
+    },
+    {
+      "id": "mc-timelycare",
+      "type": "multiple-choice",
+      "prompt": "Which partner gives UIC students 24/7 virtual mental health support?",
+      "choices": ["TimelyCare", "StudyBuddy", "CampusCab", "FlexPay"],
+      "answer": "TimelyCare"
+    },
+    {
+      "id": "tf-individual-only",
+      "type": "true-false",
+      "prompt": "True or False: The Counseling Center only provides individual therapy.",
+      "answer": "False"
+    },
+    {
+      "id": "tf-hours",
+      "type": "true-false",
+      "prompt": "True or False: The Counseling Center is open from 8:30am to 5pm.",
+      "answer": "True"
+    },
+    {
+      "id": "tf-ssb",
+      "type": "true-false",
+      "prompt": "True or False: The Counseling Center is located in the Student Services Building (SSB).",
+      "answer": "True"
+    },
+    {
+      "id": "tf-support-group",
+      "type": "true-false",
+      "prompt": "True or False: Attending a support group requires an initial consultation.",
+      "answer": "False"
+    },
+    {
+      "id": "tf-virtual",
+      "type": "true-false",
+      "prompt": "True or False: The Counseling Center offers services both virtually and in person.",
+      "answer": "True"
+    },
+    {
+      "id": "tf-single-session",
+      "type": "true-false",
+      "prompt": "True or False: You can book a single-session appointment online.",
+      "answer": "True"
+    },
+    {
+      "id": "tf-free",
+      "type": "true-false",
+      "prompt": "True or False: The Counseling Center's services are free.",
+      "answer": "True"
+    },
+    {
+      "id": "tf-24-7",
+      "type": "true-false",
+      "prompt": "True or False: You can call the Counseling Center at 312-996-3490 24/7 for support.",
+      "answer": "True"
+    },
+    {
+      "id": "tf-crisis-appointment",
+      "type": "true-false",
+      "prompt": "True or False: Crisis services are by appointment only.",
+      "answer": "False"
     }
   ]
 }

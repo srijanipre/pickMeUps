@@ -42,30 +42,71 @@
   text-wrap: balance;
 }
 
-.question__input {
+.question__fieldset {
   width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.question__prompt {
+  margin-bottom: 14px;
+}
+
+.question__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.question__choices--tf {
+  flex-direction: row;
+}
+
+.question__choices--tf .question__choice {
+  flex: 1;
+  justify-content: center;
+}
+
+.question__choice {
+  position: relative;
+  display: flex;
+  align-items: center;
   min-height: 48px;
   padding: 10px 14px;
   border: 1.5px solid var(--pink-soft);
-  border-radius: 4px;
+  border-radius: 6px;
   background: var(--white);
   font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 16px; /* prevents iOS zoom-on-focus */
+  font-size: 1rem;
+  line-height: 1.25;
   color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
 }
 
-.question__input::placeholder {
-  color: #8a8d9c;
+.question__choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.question__input:focus-visible {
+.question__choice:has(input:checked) {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.question__choice:has(input:focus-visible) {
   outline: 3px solid var(--blue-light);
   outline-offset: 2px;
 }
 
-.question__input:disabled {
-  background: #f6f6fa;
+.question__fieldset:disabled .question__choice {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .question__submit {

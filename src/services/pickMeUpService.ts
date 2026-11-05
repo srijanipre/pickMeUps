@@ -1,5 +1,5 @@
 import { questions, siteConfig } from '../config/site'
-import { isAcceptedAnswer } from './validateAnswer'
+import { isCorrectAnswer } from './validateAnswer'
 
 export interface SubmitRequest {
   questionId: string
@@ -21,7 +21,7 @@ export const demoService: PickMeUpService = {
     await new Promise((r) => setTimeout(r, 450))
     const question = questions.find((q) => q.id === questionId)
     if (!question) return { status: 'error', message: 'Unknown question.' }
-    return isAcceptedAnswer(answer, question.acceptedAnswers)
+    return isCorrectAnswer(answer, question.answer)
       ? { status: 'correct', code: siteConfig.demoCode }
       : { status: 'incorrect' }
   },

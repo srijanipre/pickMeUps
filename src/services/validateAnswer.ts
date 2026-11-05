@@ -8,11 +8,7 @@ export function normalizeAnswer(value: string): string {
     .trim()
 }
 
-export function isAcceptedAnswer(answer: string, accepted: string[]): boolean {
+export function isCorrectAnswer(answer: string, correct: string): boolean {
   const normalized = normalizeAnswer(answer)
-  if (!normalized) return false
-  return accepted.some((phrase) => {
-    const p = normalizeAnswer(phrase)
-    return p.length > 0 && normalized.includes(p)
-  })
+  return normalized.length > 0 && normalized === normalizeAnswer(correct)
 }

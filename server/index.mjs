@@ -30,13 +30,9 @@ function normalize(value) {
     .trim()
 }
 
-function isAccepted(answer, accepted) {
+function isCorrect(answer, correct) {
   const n = normalize(answer)
-  if (!n) return false
-  return accepted.some((p) => {
-    const np = normalize(p)
-    return np.length > 0 && n.includes(np)
-  })
+  return n.length > 0 && n === normalize(correct)
 }
 
 function readPin() {
@@ -72,7 +68,7 @@ createServer((req, res) => {
       const { questionId, answer } = JSON.parse(raw || '{}')
       const question = questions.find((q) => q.id === questionId)
       if (!question) return send(res, 400, { error: 'Unknown question' })
-      if (!isAccepted(answer, question.acceptedAnswers)) return send(res, 200, { correct: false })
+      if (!isCorrect(answer, question.answer)) return send(res, 200, { correct: false })
       return send(res, 200, { correct: true, code: readPin() })
     } catch (err) {
       console.error(err)

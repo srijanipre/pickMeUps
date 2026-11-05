@@ -1,6 +1,6 @@
 import { useId, useState, type FormEvent } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
-import { siteConfig, type Question } from '../config/site'
+import { choicesFor, siteConfig, type Question } from '../config/site'
 import './QuestionCard.css'
 
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
 
 export function QuestionCard({ question, status, errorMessage, shakeKey, onSubmit }: Props) {
   const [answer, setAnswer] = useState('')
+  const [choices] = useState(() => choicesFor(question))
   const inputId = useId()
   const feedbackId = useId()
   const reduceMotion = useReducedMotion()
@@ -24,7 +25,7 @@ export function QuestionCard({ question, status, errorMessage, shakeKey, onSubmi
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
     if (submitting) return
-    if (!answer.trim()) {
+    if (!answer) {
       ;(e.currentTarget as HTMLFormElement).querySelector('input')?.focus()
       return
     }
@@ -65,26 +66,33 @@ export function QuestionCard({ question, status, errorMessage, shakeKey, onSubmi
         animate={shakeKey > 0 && !reduceMotion ? { x: [0, -9, 8, -6, 4, 0] } : { x: 0 }}
         transition={{ duration: 0.42, ease: 'easeInOut' }}
       >
-        <label id={`${inputId}-label`} htmlFor={inputId} className="question__prompt">
-          {question.prompt}
-        </label>
-        <input
-          id={inputId}
-          className="question__input"
-          type="text"
-          name="answer"
-          value={answer}
-          onChange={(e) => setAnswer(e.target.value)}
-          placeholder={siteConfig.inputPlaceholder}
-          autoComplete="off"
-          autoCapitalize="none"
-          spellCheck={false}
-          enterKeyHint="go"
+        <fieldset
+          className="question__fieldset"
           aria-describedby={feedbackId}
           aria-invalid={showWrong || undefined}
           disabled={submitting}
-          required
-        />
+        >
+          <legend id={`${inputId}-label`} className="question__prompt">
+            {question.prompt}
+          </legend>
+          <div
+            className={`question__choices${question.type === 'true-false' ? ' question__choices--tf' : ''}`}
+          >
+            {choices.map((choice) => (
+              <label key={choice} className="question__choice">
+                <input
+                  type="radio"
+                  name={inputId}
+                  value={choice}
+                  checked={answer === choice}
+                  onChange={() => setAnswer(choice)}
+                  required
+                />
+                <span>{choice}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
         <motion.button
           type="submit"
           className="question__submit"

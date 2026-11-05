@@ -4,19 +4,21 @@ import questionData from '../../shared/questions.json'
 
 export interface Question {
   id: string
+  type: 'multiple-choice' | 'true-false'
   prompt: string
-  /** Case-insensitive; an answer counts if it contains any of these phrases. */
-  acceptedAnswers: string[]
+  /** Multiple-choice only; shuffled on each visit. True/false questions always show True, False. */
+  choices?: string[]
+  /** The correct choice, spelled exactly as it appears in `choices` (or "True" / "False"). */
+  answer: string
 }
 
-export const questions: Question[] = questionData.questions
+export const questions = questionData.questions as Question[]
 
 export const siteConfig = {
   logoLetter: 'G',
   brandTitle: 'Pick Me Ups!',
   intro: 'Answer a quick question about the Counseling Center to get a keepsake!',
   wrongAnswerText: 'Wrong Answer! Try Again',
-  inputPlaceholder: 'Enter your answer here',
   submitLabel: 'Submit',
 
   success: {
@@ -53,4 +55,18 @@ export const siteConfig = {
 
 export function pickRandom<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)]
+}
+
+export function shuffle<T>(items: T[]): T[] {
+  const copy = [...items]
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
+
+/** The options to display for a question, in display order. */
+export function choicesFor(question: Question): string[] {
+  return question.type === 'true-false' ? ['True', 'False'] : shuffle(question.choices ?? [])
 }
