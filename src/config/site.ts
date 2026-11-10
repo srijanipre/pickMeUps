@@ -46,7 +46,7 @@ export const siteConfig = {
     linkText: 'Click here to find out about more resources from the Counseling Center!',
     /** Replace with the Counseling Center resources page. */
     linkHref: '#',
-    credits: 'Credits to XYZ',
+    credits: 'Credits to Srijani Prekki, Kike Idris, Nandini Saha, Max Svadlena',
   },
 
   /** Code shown in the demo flow only. Production fetches the real PIN from the API. */
