@@ -102,6 +102,12 @@
       "type": "true-false",
       "prompt": "True or False: Crisis services are by appointment only.",
       "answer": "False"
+    },
+    {
+      "id": "tf-open-weekends",
+      "type": "true-false",
+      "prompt": "True or False: The Counseling Center is open on Saturday and Sunday?",
+      "answer": "False"
     }
   ]
 }
